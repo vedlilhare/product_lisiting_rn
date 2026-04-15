@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 23.7.0
           cache: 'npm'
+          # Add this step right after ↓
+      - name: Set NODE_BINARY for Gradle
+        run: echo "NODE_BINARY=$(which node)" >> android/gradle.properties
 
       # 3. Setup Java (required for Android builds)
       - name: Setup Java JDK
