@@ -25,7 +25,7 @@ react {
 
     /* Bundling */
     //   A list containing the node command and its flags. Default is just 'node'.
-    // nodeExecutableAndArgs = ["node"]
+    nodeExecutableAndArgs = ["/Users/ved/.nvm/versions/node/v23.7.0/bin/node"]
     //
     //   The command to run when bundling. By default is 'bundle'
     // bundleCommand = "ram-bundle"
@@ -86,6 +86,13 @@ android {
         versionName "1.0"
     }
     signingConfigs {
+
+        release {
+        storeFile file(MYAPP_UPLOAD_STORE_FILE)
+        storePassword System.getenv("KEYSTORE_PASSWORD")
+        keyAlias System.getenv("KEY_ALIAS")
+        keyPassword System.getenv("KEY_PASSWORD")
+    }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
