@@ -23,7 +23,7 @@ apply plugin: "com.facebook.react.rootproject"
 allprojects {
     tasks.withType(org.gradle.api.tasks.AbstractExecTask) {
         if (it.name.contains("generateCodegenSchemaFromJavaScript") || it.name.contains("generateCodegenArtifactsFromSchema")) {
-            environment "NODE_BINARY", "/Users/ved/.nvm/versions/node/v23.7.0/bin/node"
+            environment "NODE_BINARY", "node"
         }
     }
 }
